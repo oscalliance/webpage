@@ -380,6 +380,29 @@ p {
 }
 
 
+
+.elite-contributor {
+    min-height: 40px;
+    background: linear-gradient(var(--bg-secondary) 0%, #3e3446 100%);
+    border: 1px solid #825792;
+    box-shadow: 0 0 15px rgba(255, 100, 255, 0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    text-align: center;
+    word-break: break-word;
+    transition: all 0.1s ease;
+}
+
+.elite-contributor:hover {
+    transform: scale(1.02);
+}
+
+
+
+
 /* main page stuff */
 
 .link-button-box {

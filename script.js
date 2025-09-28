@@ -203,23 +203,18 @@ class ContributorManager {
         this.projectContainer = projectContainer;
         this.contributorsContainer = projectContainer.querySelector('.contributor-box');
         this.contributors = this.getContributorsForProject(projectContainer.dataset.project);
+        this.eliteContributors = this.getEliteContributorsForProject(projectContainer.dataset.project);
         this.init();
     }
     
     getContributorsForProject(projectId) {
         const contributorsByProject = {
             'huge-firey': [
-                "Reviksedy",
                 "Simurated",
-                "AnalyticalTomato",
-                "BlueStevie64",
-                "Matheuspixel",
                 "Frenkizaba1",
                 "Awsomazing_neil",
                 "theonlylizard",
                 "PizzaGuy25_a",
-                "Nythic",
-                "akaSandwich",
                 "Sam_Studios",
                 "clampity",
                 "Fananan",
@@ -230,9 +225,7 @@ class ContributorManager {
                 "FernieLeaflen",
                 "Legitbeatle",
                 "995qa",
-                "AiryAiryAiry",
                 "Amireal71",
-                "Fifi",
                 "One",
                 "soapdoggie",
                 "parfaitheart",
@@ -256,7 +249,27 @@ class ContributorManager {
                 "Ender"
             ],
             'default': [
-                "None"
+                ""
+            ]
+        };
+        
+        return contributorsByProject[projectId] || contributorsByProject.default;
+    }
+
+    getEliteContributorsForProject(projectId) {
+        const contributorsByProject = {
+            'huge-firey': [
+                "Reviksedy",
+                "BlueStevie64",
+                "Nythic",
+                "Matheuspixel",
+                "akaSandwich",
+                "AiryAiryAiry",
+                "Fifi",
+                "AnalyticalTomato"
+            ],
+            'default': [
+                ""
             ]
         };
         
@@ -265,7 +278,8 @@ class ContributorManager {
     
     init() {
         this.shuffleContributors();
-        this.renderContributors();
+        this.shuffleEliteContributors();
+        this.renderAllContributors();
     }
     
     shuffleContributors() {
@@ -274,11 +288,25 @@ class ContributorManager {
             [this.contributors[i], this.contributors[j]] = [this.contributors[j], this.contributors[i]];
         }
     }
+
+    shuffleEliteContributors() {
+        for (let i = this.eliteContributors.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.eliteContributors[i], this.eliteContributors[j]] = [this.eliteContributors[j], this.eliteContributors[i]];
+        }
+    }
     
-    renderContributors() {
+    renderAllContributors() {
         if (!this.contributorsContainer) return;
         
         this.contributorsContainer.innerHTML = '';
+
+        this.eliteContributors.forEach(contributor => {
+            const contributorElement = document.createElement('div');
+            contributorElement.className = 'elite-contributor';
+            contributorElement.textContent = contributor;
+            this.contributorsContainer.appendChild(contributorElement);
+        });
         
         this.contributors.forEach(contributor => {
             const contributorElement = document.createElement('div');
@@ -291,7 +319,7 @@ class ContributorManager {
     }
     
     centerSingleItemsInRows() {
-        const contributors = this.contributorsContainer.querySelectorAll('.contributor');
+        const contributors = this.contributorsContainer.querySelectorAll('.contributor, .elite-contributor');
         const totalContributors = contributors.length;
         const itemsPerRow = window.innerWidth > 600 ? 3 : (window.innerWidth > 400 ? 2 : 1);
         
@@ -304,12 +332,6 @@ class ContributorManager {
             const lastRowStartIndex = fullRows * itemsPerRow;
             contributors[lastRowStartIndex].style.gridColumn = `2 / span 1`;
         }
-    }
-    
-    addContributor(name) {
-        this.contributors.push(name);
-        this.shuffleContributors();
-        this.renderContributors();
     }
 }
 
