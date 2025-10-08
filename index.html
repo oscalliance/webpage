@@ -15,7 +15,7 @@
         <div class="project-list">
             <button class="project-button" data-show-project="osc-alliance">OSC Alliance</button>
             <button class="project-button" data-show-project="huge-firey">The Huge Firey</button>
-            <button class="project-button" data-show-project="coming-soon">Coming soon...</button>
+            <button class="project-button" data-show-project="tpot-banner">TPOT Banner</button>
         </div>
 
         <div class="project active" data-project="osc-alliance">
@@ -32,6 +32,10 @@
                 <a href="https://wplace.live/join?id=0198851c-a2c8-759f-964e-5ae4709de62f"><div class="link-button" id="link-button-wplace">
                     <img src="./resources/wplace.png" width="40px">
                     Wplace Alliance
+                </div></a>
+                <a href="https://www.youtube.com/@oscpixelart"><div class="link-button" id="link-button-youtube">
+                    <img src="./resources/youtube.png" width="40px">
+                    YouTube Channel
                 </div></a>
             </div>
         </div>
@@ -129,8 +133,70 @@
         </div>
 
 
-        <div class="project" data-project="coming-soon">
-            <p>Nothing to see here... yet 👀</p>
+        <div class="project" data-project="tpot-banner">
+            <h1>TPOT BANNER</h1>
+            <p>Jacknjellify YouTube banner, now being recreated in Wplace!</p>
+            
+            <div class="slider">
+                <div class="slide-counter">
+                    <span class="current-slide">1</span>
+                    <span class="counter-separator">/</span>
+                    <span class="total-slides">1</span>
+                </div>
+
+                <div class="slide active" data-date="10/04/2025" data-pixelcount="80K" data-note="The beginning."><img src="./resources/tpot_banner/tpot_banner1.png" loading="lazy"></div>
+                <div class="slide" data-date="10/05/2025" data-pixelcount="147K" data-note=""><img src="./resources/tpot_banner/tpot_banner2.png" loading="lazy"></div>
+                <div class="slide" data-date="10/06/2025" data-pixelcount="215K" data-note=""><img src="./resources/tpot_banner/tpot_banner3.png" loading="lazy"></div>
+                <div class="slide" data-date="10/07/2025" data-pixelcount="265K" data-note=""><img src="./resources/tpot_banner/tpot_banner4.png" loading="lazy"></div>
+                <div class="slide" data-date="10/08/2025" data-pixelcount="333K" data-note=""><img src="./resources/tpot_banner/tpot_banner5.png" loading="lazy"></div>
+            </div>
+
+            <div class="image-description-container">
+                <div class="description-box" style="width: 25%;">
+                    <div class="description-box-header">
+                        <p>DATE</p>
+                    </div>
+                    <div class="description-box-content">
+                        <p id="current-date">DATE</p>
+                    </div>
+                </div>
+
+                <div class="description-box" style="width: 25%;">
+                    <div class="description-box-header">
+                        <p>PIXEL COUNT</p>
+                    </div>
+                    <div class="description-box-content">
+                        <p id="current-pixel-count">PIXEL COUNT</p>
+                    </div>
+                </div>
+
+                <div class="description-box" style="width: 50%;">
+                    <div class="description-box-header">
+                        <p>NOTE</p>
+                    </div>
+                    <div class="description-box-content">
+                        <p id="current-note">NOTE</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="slider-controls">
+                <button class="prev-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+
+                <div class="dots" id="dots-cont">
+                </div>
+        
+                <button class="next-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
         </div>
         
     </div>

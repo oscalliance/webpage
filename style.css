@@ -99,17 +99,19 @@ p {
 /* slider */
 .slider {
     width: min(600px, 90%);
-    aspect-ratio: 1;
     border: 1px solid var(--bg-secondary);
     border-radius: 15px;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
+    height: auto;
 }
 
 .slide {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
     opacity: 0;
     transition: opacity 0.2s ease;
     pointer-events: none;
@@ -118,7 +120,7 @@ p {
 .slide.active {
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 0.2s ease;
+    position: relative; 
 }
 
 .slide:not(.active) {
@@ -127,9 +129,7 @@ p {
 
 .slider img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
     display: block;
 }
 
@@ -413,7 +413,7 @@ p {
     width: min(600px, 90%);
     margin: 1rem auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr; 
     gap: 0.5rem;
     padding: 0.5rem;
 }
@@ -465,21 +465,22 @@ p {
 
 #link-button-wplace {
     background: #D3EAC0;
-    border: 1px solid #E3F0D4;
+    border: 1px solid #f4ffe7;
     color: var(--bg-dark);
 }
 
 #link-button-wplace:hover {
-    background: #E3F0D4;
+    background: #f4ffe7;
     transform: scale(1.02);
 }
 
-.link-button-box a:nth-child(3) {
-    grid-column: 1 / span 2;
+#link-button-youtube {
+    background: #FF0033;
+    border: 1px solid #fc4050;
 }
 
-.link-button-box a:nth-child(3) .link-button {
-    justify-content: center;
+#link-button-youtube:hover {
+    background: #fc4050;
 }
 
 /* responsiveness stuff */
