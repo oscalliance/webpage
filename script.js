@@ -231,7 +231,8 @@ class ContributorManager {
                 "Reid",
                 "Ajibounce",
                 "L0v33rx",
-                "Ender"
+                "Ender",
+                "zushyart"
             ],
             'default': [
                 ""
