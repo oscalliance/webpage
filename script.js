@@ -258,7 +258,10 @@ class ContributorManager {
                 "slimeman",
                 "b100rulez",
                 "Fifi",
-                "BookFan510"
+                "BookFan510",
+                "Happyguy",
+                "polinaa_malin",
+                "Charkis"
             ],
             'default': [
             ]

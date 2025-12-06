@@ -251,7 +251,7 @@ p {
     border-right: 1px solid var(--bg-tertiary);
     height: 100%;
     width: 100%;
-    min-width: 40px;
+    min-width: 50px;
     background: var(--bg-secondary);
     color: var(--text-white);
     transition: all 0.2s ease;
