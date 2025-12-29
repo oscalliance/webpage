@@ -232,7 +232,8 @@ class ContributorManager {
                 "Ajibounce",
                 "L0v33rx",
                 "Ender",
-                "zushyart"
+                "zushyart",
+                "polinaa_malin"
             ],
             'tpot-banner': [
                 "Reviksedy",
