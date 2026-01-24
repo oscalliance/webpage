@@ -1,422 +1,878 @@
 <!DOCTYPE html>
-<!-- its a bit messy but it works -->
+<!-- it might be a bit messy but it works and im proud of it -->
 <html>
+
 <head>
-    <title>OSC Alliance Projects</title>
+    <title>OSC Alliance</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="./resources/icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <div id="circle-container"></div>
-
-    <div class="content">
-        <span style="font-size: 50px; font-weight: bold; color: white; margin-bottom: 1rem;">OSC Alliance Projects</span>
-
-        <div class="project-list">
-            <button class="project-button" data-show-project="osc-alliance">OSC Alliance</button>
-            <button class="project-button" data-show-project="huge-firey">Huge Firey</button>
-            <button class="project-button" data-show-project="tpot-banner">TPOT Banner</button>
-            <button class="project-button" data-show-project="bfdi-poster">BFDI Poster</button>
-        </div>
-
-        <div class="project active" data-project="osc-alliance">
-            <!-- <img src="./resources/alliance.gif" style="width: min(600px, 90%); filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); margin: -2rem auto;"> -->
-             <img src="./resources/alliance_christmas.png" title="Artwork by RottenPug!" style="width: min(600px, 90%); filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); margin: 0 auto; border-radius: 15px;">
-            <div class="link-button-box">
-                <a href="https://discord.gg/uwDqs2tYHa"><div class="link-button" id="link-button-discord">
-                    <img src="./resources/discord.png" width="40px">
-                    Discord Server
-                </div></a>
-                <a href="https://www.reddit.com/r/OscAlliance/"><div class="link-button" id="link-button-reddit">
-                    <img src="./resources/reddit.png" width="40px">
-                    Alliance Subreddit
-                </div></a>
-                <a href="https://wplace.live/join?id=0198851c-a2c8-759f-964e-5ae4709de62f"><div class="link-button" id="link-button-wplace">
-                    <img src="./resources/wplace.png" width="40px">
-                    Wplace Alliance
-                </div></a>
-                <a href="https://www.youtube.com/@oscpixelart"><div class="link-button" id="link-button-youtube">
-                    <img src="./resources/youtube.png" width="40px">
-                    YouTube Channel
-                </div></a>
+    <div class="main">
+        <div class="header">
+            <img class="header-logo" src="./resources/header_logo.png">
+            <div class="splash-text" id="splash-text"></div>
+            <div class="header-button-container">
+                <button class="button-normal header-button page-switching-button" data-target="about">About</button>
+                <button class="button-normal header-button page-switching-button"
+                    data-target="projects">Projects</button>
             </div>
         </div>
 
-        <div class="project" data-project="huge-firey">
-            <h1>HUGE FIREY</h1>
-            <p>One of BFDI's most recognizable faces is now one of the largest drawings in the United States!</p>
+        <div class="content">
+            <div class="page" id="about">
+                <img src="./resources/oscalliance_banner_rottenpug_anim.gif" style="float:right; width:42%; border-radius: var(--radius-medium); outline: 1px solid var(--background-bright); margin-left: 1rem;">
+                <h1>Hello!</h1><br>
+                <p>We are an alliance on Wplace dedicated to drawing OSC-related stuff. Join us in creating amazing projects!</p><br>
 
-            <div class="slider-controls-top">
-                <div class="autoscroll-controls">
-                    <button data-delay="off" class="active">Off</button>
-                    <button data-delay="0.01">0.01s</button>
-                    <button data-delay="0.03">0.03s</button>
-                    <button data-delay="0.05">0.05s</button>
-                    <button data-delay="0.1">0.1s</button>
-                    <button data-delay="0.5">0.5s</button>
-                    <button data-delay="1">1s</button>
-                    <button data-delay="5">5s</button>
-                    <button data-delay="10">10s</button>
-                </div>
-
-                <div class="direction-control">
-                    <button class="direction-toggle">→</button>
-                </div>
-            </div>
-            
-            <div class="slider">
-                <div class="slide-counter">
-                    <span class="current-slide">1</span>
-                    <span class="counter-separator">/</span>
-                    <span class="total-slides">1</span>
-                </div>
-
-                <div class="slide active" data-date="08/29/2025" data-pixelcount="2K" data-note="The beginning."><img src="./resources/firey/firey1.png" loading="lazy"></div>
-                <div class="slide" data-date="09/02/2025" data-pixelcount="120K" data-note="The first leg and eye are finished!"><img src="./resources/firey/firey2.png" loading="lazy"></div>
-                <div class="slide" data-date="09/03/2025" data-pixelcount="235K" data-note="Both legs and eyes are finished!"><img src="./resources/firey/firey3.png" loading="lazy"></div>
-                <div class="slide" data-date="09/04/2025" data-pixelcount="330K" data-note="Both arms are finished!"><img src="./resources/firey/firey4.png" loading="lazy"></div>
-                <div class="slide" data-date="09/05/2025" data-pixelcount="450K" data-note="Every black part is finished!"><img src="./resources/firey/firey5.png" loading="lazy"></div>
-                <div class="slide" data-date="09/06/2025" data-pixelcount="580K" data-note=""><img src="./resources/firey/firey6.png" loading="lazy"></div>
-                <div class="slide" data-date="09/07/2025" data-pixelcount="710K" data-note="Firey's outline and face are finished!"><img src="./resources/firey/firey7.png" loading="lazy"></div>
-                <div class="slide" data-date="09/08/2025" data-pixelcount="840K" data-note=""><img src="./resources/firey/firey8.png" loading="lazy"></div>
-                <div class="slide" data-date="09/09/2025" data-pixelcount="950K" data-note=""><img src="./resources/firey/firey9.png" loading="lazy"></div>
-                <div class="slide" data-date="09/11/2025" data-pixelcount="1.2M" data-note=""><img src="./resources/firey/firey10.png" loading="lazy"></div>
-                <div class="slide" data-date="09/12/2025" data-pixelcount="1.31M" data-note=""><img src="./resources/firey/firey11.png" loading="lazy"></div>
-                <div class="slide" data-date="09/13/2025" data-pixelcount="1.43M" data-note=""><img src="./resources/firey/firey12.png" loading="lazy"></div>
-                <div class="slide" data-date="09/14/2025" data-pixelcount="1.5M" data-note=""><img src="./resources/firey/firey13.png" loading="lazy"></div>
-                <div class="slide" data-date="09/15/2025" data-pixelcount="1.6M" data-note=""><img src="./resources/firey/firey14.png" loading="lazy"></div>
-                <div class="slide" data-date="09/16/2025" data-pixelcount="1.75M" data-note=""><img src="./resources/firey/firey15.png" loading="lazy"></div>
-                <div class="slide" data-date="09/17/2025" data-pixelcount="1.7M" data-note=""><img src="./resources/firey/firey16.png" loading="lazy"></div>
-                <div class="slide" data-date="09/18/2025" data-pixelcount="2.02M" data-note=""><img src="./resources/firey/firey17.png" loading="lazy"></div>
-                <div class="slide" data-date="09/19/2025" data-pixelcount="2.13M" data-note=""><img src="./resources/firey/firey18.png" loading="lazy"></div>
-                <div class="slide" data-date="09/20/2025" data-pixelcount="2.25M" data-note="The yellow part is finished!"><img src="./resources/firey/firey19.png" loading="lazy"></div>
-                <div class="slide" data-date="09/21/2025" data-pixelcount="2.37M" data-note=""><img src="./resources/firey/firey20.png" loading="lazy"></div>
-                <div class="slide" data-date="09/22/2025" data-pixelcount="2.47M" data-note=""><img src="./resources/firey/firey21.png" loading="lazy"></div>
-                <div class="slide" data-date="09/23/2025" data-pixelcount="2.59M" data-note=""><img src="./resources/firey/firey22.png" loading="lazy"></div>
-                <div class="slide" data-date="09/24/2025" data-pixelcount="2.7M" data-note=""><img src="./resources/firey/firey23.png" loading="lazy"></div>
-                <div class="slide" data-date="09/25/2025" data-pixelcount="2.76M" data-note="Huge Firey is finished!"><img src="./resources/firey/firey24.png" loading="lazy"></div>
-            </div>
-
-            <div class="image-description-container">
-                <div class="description-box" style="width: 20%;">
-                    <div class="description-box-header">
-                        <p>DATE</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-date">DATE</p>
-                    </div>
-                </div>
-
-                <div class="description-box" style="width: 20%;">
-                    <div class="description-box-header">
-                        <p>PIXEL COUNT</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-pixel-count">PIXEL COUNT</p>
-                    </div>
-                </div>
-
-                <div class="description-box" style="width: 60%;">
-                    <div class="description-box-header">
-                        <p>NOTE</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-note">NOTE</p>
-                    </div>
-                </div>
+                <h2>Links</h2><br>
+                <a href="https://wplace.live/join?id=0198851c-a2c8-759f-964e-5ae4709de62f" class="about-link">
+                    <img src="./resources/link_icons/wplace.png">
+                    <p>Wplace Alliance</p>
+                </a>
+                <a href="https://discord.gg/uwDqs2tYHa" class="about-link">
+                    <img src="./resources/link_icons/discord.png">
+                    <p>Discord Server</p>
+                </a>
+                <a href="https://www.youtube.com/@oscpixelart" class="about-link">
+                    <img src="./resources/link_icons/youtube.png">
+                    <p>YouTube</p>
+                </a>
                 
             </div>
 
-            <div class="dots" id="dots-cont">
+            <div class="page" id="projects">
+                <div class="project-cards-container">
+                    <button class="project-card" data-project="stylized-bfdi-logo">
+                        <img src="./resources/project_images/thumbnails/stylized_bfdi_logo.png"
+                            class="project-card-image">
+                        <div class="project-card-title">
+                            Stylized BFDI Logo
+                        </div>
+                        <div class="project-card-description">
+                            Our first project ever!
+                        </div>
+                    </button>
+                    <button class="project-card" data-project="huge-firey">
+                        <img src="./resources/project_images/thumbnails/huge_firey.png" class="project-card-image">
+                        <div class="project-card-title">
+                            Huge Firey
+                        </div>
+                        <div class="project-card-description">
+                            Our first major alliance project about one of BFDI's most recognizable faces, Firey!
+                        </div>
+                    </button>
+                    <button class="project-card" data-project="tpot-banner">
+                        <img src="./resources/project_images/thumbnails/tpot_banner.png" class="project-card-image">
+                        <div class="project-card-title">
+                            TPOT Banner
+                        </div>
+                        <div class="project-card-description">
+                            The Jacknjellify YouTube banner, recreated in Wplace with precise scaling and dithering!
+                        </div>
+                    </button>
+                    <button class="project-card" data-project="bfdi-poster">
+                        <img src="./resources/project_images/thumbnails/bfdi_poster.png" class="project-card-image">
+                        <div class="project-card-title">
+                            BFDI Poster
+                        </div>
+                        <div class="project-card-description">
+                            Our biggest drawing featuring the original cast of 20 contestants!
+                        </div>
+                    </button>
+                    <button class="project-card" data-project="huge-lightbulb">
+                        <img src="./resources/project_images/thumbnails/huge_lightbulb.png" class="project-card-image">
+                        <div class="project-card-title">
+                            Huge Lightbulb
+                        </div>
+                        <div class="project-card-description">
+                            Our first major Inanimate Insanity project!
+                        </div>
+                        <!-- <div class="project-card-current-project-tag">CURRENT PROJECT</div> -->
+                    </button>
+                </div>
             </div>
 
-            <div class="slider-controls-bottom">
-                <button class="prev-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                    <span style="width: 100%;">Previous</span>
-                </button>
-        
-                <button class="next-button">
-                    <span style="width: 100%;">Next</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
+
+            <!-- PROJECT PAGES -->
+
+
+            <div class="page project-page" id="projects/stylized-bfdi-logo">
+
+                <div class="project-page-header">
+                    <button class="button-normal page-switching-button" data-target="projects">Go back</button>
+                    <h1>STYLIZED BFDI LOGO</h1>
+                    <span class="header-spacer" aria-hidden="true"></span>
+                </div>
+
+                <div class="project-page-description">
+                    The first-ever OSC Alliance project made around the iconic BFDI logo. Who knew how far we would go
+                    from this?
+                </div>
+
+                <div class="project-page-info-container">
+                    <div class="project-page-meta-container">
+                        <dl class="project-page-meta">
+                            <div class="project-page-meta-row">
+                                <dt>Idea by</dt>
+                                <dd>
+                                    Loygee
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Template by</dt>
+                                <dd>
+                                    Loygee
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Started on</dt>
+                                <dd>
+                                    08/13/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Finished on</dt>
+                                <dd>
+                                    09/02/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Pixel count</dt>
+                                <dd>
+                                    8.5K
+                                </dd>
+                            </div>
+                        </dl>
+                        <div class="project-page-meta-button-container">
+                            <button class="button-normal"
+                                onclick=" window.open('https://wplace.live/?lat=47.89212639148532&lng=-114.27284212822265','_blank')">Go
+                                to project</button>
+                            <button class="button-normal" disabled>Download template(s)</button>
+                        </div>
+                    </div>
+
+                    <div class="project-page-image-container">
+                        <img src="./resources/project_images/overview/stylized_bfdi_logo.png">
+                    </div>
+                </div>
             </div>
 
-            <br>
 
-            <h2>CONTRIBUTORS</h2>
 
-            <div class="contributor-box"></div>
 
+            <div class="page project-page" id="projects/huge-firey">
+
+                <div class="project-page-header">
+                    <button class="button-normal page-switching-button" data-target="projects">Go back</button>
+                    <h1>
+                        HUGE FIREY
+                    </h1>
+                    <span class="header-spacer" aria-hidden="true"></span>
+                </div>
+
+                <div class="project-page-description">
+                    One of BFDI's most recognizable faces is now one of the largest drawings in the United States!
+                </div>
+
+                <div class="project-page-info-container">
+                    <div class="project-page-meta-container">
+                        <dl class="project-page-meta">
+                            <div class="project-page-meta-row">
+                                <dt>Idea by</dt>
+                                <dd>
+                                    Reviksedy
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Template by</dt>
+                                <dd>
+                                    Reviksedy
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Started on</dt>
+                                <dd>
+                                    08/27/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Finished on</dt>
+                                <dd>
+                                    09/24/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Pixel count</dt>
+                                <dd>
+                                    2.76M
+                                </dd>
+                            </div>
+                        </dl>
+                        <div class="project-page-meta-button-container">
+                            <button class="button-normal"
+                                onclick=" window.open(
+                                    'https://wplace.live/?lat=47.908035904301975&lng=-114.97649447197264'
+                                    ,'_blank')">Go to project</button>
+                            <button class="button-normal"
+                                onclick=" window.open(
+                                    'https://drive.google.com/drive/folders/1q35MvnLqYsYe35rsHv8dB1XMYRoO9lvj?usp=drive_link'
+                                    ,'_blank')">Download template(s)</button>
+                        </div>
+                    </div>
+
+                    <div class="project-page-image-container">
+                        <img src="./resources/project_images/overview/huge_firey.png">
+                    </div>
+                </div>
+
+                <div class="project-page-extras-container">
+                    <div class="project-page-history-container">
+                        <div class="project-page-extras-header">
+                            <h3>HISTORY</h3>
+                            <span style="margin-left: auto;">
+                                Auto-scroll (<span class="project-page-gallery-auto-scroll-speed-display">OFF</span>)
+                            </span>
+                            <input type="range" min="0" max="3" step="0.001" value="0"
+                                class="project-page-gallery-auto-scroll-range">
+                        </div>
+
+                        <div class="project-page-gallery-container">
+                            <div class="project-page-gallery">
+                                <div class="project-page-gallery-counter">
+                                    <span class="project-page-gallery-counter-current-slide">1</span>
+                                    <span class="project-page-gallery-counter-counter-separator">/</span>
+                                    <span class="project-page-gallery-counter-total-slides">1</span>
+                                </div>
+                                <div class="project-page-gallery-slides">
+
+                                    <div class="project-page-gallery-slide" data-date="08/29/2025" data-pixel-count="2K" data-note="The beginning."><img src="./resources/project_images/timelines/huge_firey/huge_firey1.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/02/2025" data-pixel-count="120K" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey2.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/03/2025" data-pixel-count="235K" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey3.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/04/2025" data-pixel-count="330K" data-note="The limbs are finished!"><img src="./resources/project_images/timelines/huge_firey/huge_firey4.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/05/2025" data-pixel-count="450K" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey5.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/06/2025" data-pixel-count="580K" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey6.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/07/2025" data-pixel-count="710K" data-note="Firey's outline and face are finished!"><img src="./resources/project_images/timelines/huge_firey/huge_firey7.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/08/2025" data-pixel-count="840K" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey8.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/09/2025" data-pixel-count="950K" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey9.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/11/2025" data-pixel-count="1.2M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey10.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/12/2025" data-pixel-count="1.31M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey11.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/13/2025" data-pixel-count="1.43M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey12.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/14/2025" data-pixel-count="1.5M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey13.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/15/2025" data-pixel-count="1.6M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey14.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/16/2025" data-pixel-count="1.75M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey15.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/17/2025" data-pixel-count="1.7M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey16.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/18/2025" data-pixel-count="2.02M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey17.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/19/2025" data-pixel-count="2.13M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey18.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/20/2025" data-pixel-count="2.25M" data-note="The yellow part is finished!"><img src="./resources/project_images/timelines/huge_firey/huge_firey19.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/21/2025" data-pixel-count="2.37M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey20.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/22/2025" data-pixel-count="2.47M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey21.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/23/2025" data-pixel-count="2.59M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey22.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/24/2025" data-pixel-count="2.7M" data-note=""><img src="./resources/project_images/timelines/huge_firey/huge_firey23.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="09/25/2025" data-pixel-count="2.76M" data-note="Huge Firey is finished!"><img src="./resources/project_images/timelines/huge_firey/huge_firey24.png" loading="lazy"></div>
+
+                                </div>
+                            </div>
+                            <div class="project-page-gallery-info-container">
+                                <div class="project-page-gallery-info-box" style="width: 30%;">
+                                    <div class="project-page-gallery-info-box-header">DATE</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-date">—</div>
+                                </div>
+                                <div class="project-page-gallery-info-box" style="width: 30%;">
+                                    <div class="project-page-gallery-info-box-header">PIXEL COUNT</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-pixel-count">—</div>
+
+                                </div>
+                                <div class="project-page-gallery-info-box" style="width: 100%;">
+                                    <div class="project-page-gallery-info-box-header">NOTE</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-note">—</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-page-extras-footer">
+                            <button class="button-normal project-page-gallery-prev">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="project-page-gallery-dots">
+                            </div>
+                            <button class="button-normal project-page-gallery-next">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-page-contributors-container">
+                        <div class="project-page-extras-header">
+                            <h3 style="margin: auto;">CONTRIBUTORS</h3>
+                        </div>
+                        <div class="project-page-contributors-scroll">
+                            <div class="project-page-contributor" style="display: none;">
+                                <span class="contributor-name"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="page project-page" id="projects/tpot-banner">
+                <div class="project-page-header">
+                    <button class="button-normal page-switching-button" data-target="projects">Go back</button>
+                    <h1>TPOT BANNER</h1>
+                    <span class="header-spacer" aria-hidden="true"></span>
+                </div>
+
+                <div class="project-page-description">
+                    Jacknjellify YouTube banner, recreated in Wplace!
+                </div>
+
+                <div class="project-page-info-container">
+                    <div class="project-page-meta-container">
+                        <dl class="project-page-meta">
+                            <div class="project-page-meta-row">
+                                <dt>Idea by</dt>
+                                <dd>
+                                    MatheusPixel
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Template by</dt>
+                                <dd>
+                                    akaSandwich and Reviksedy
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Started on</dt>
+                                <dd>
+                                    10/04/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Finished on</dt>
+                                <dd>
+                                    10/14/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Pixel count</dt>
+                                <dd>
+                                    646K
+                                </dd>
+                            </div>
+                        </dl>
+                        <div class="project-page-meta-button-container">
+                            <button class="button-normal"
+                                onclick=" window.open('https://wplace.live/?lat=47.601600211744056&lng=-114.95118197197264','_blank')">Go
+                                to project</button>
+                            <button class="button-normal"
+                                onclick=" window.open('https://drive.google.com/file/d/1k9nOBsHRRsdohgphB6uJAgRf9OyxoAhJ/view','_blank')">Download
+                                template(s)</button>
+                        </div>
+                    </div>
+
+                    <div class="project-page-image-container">
+                        <img src="./resources/project_images/overview/tpot_banner.png">
+                    </div>
+                </div>
+
+                <div class="project-page-extras-container">
+                    <div class="project-page-history-container">
+                        <div class="project-page-extras-header">
+                            <h3>HISTORY</h3>
+                            <span style="margin-left: auto;">
+                                Auto-scroll (<span class="project-page-gallery-auto-scroll-speed-display">OFF</span>)
+                            </span>
+                            <input type="range" min="0" max="3" step="0.001" value="0"
+                                class="project-page-gallery-auto-scroll-range">
+                        </div>
+
+                        <div class="project-page-gallery-container">
+                            <div class="project-page-gallery">
+                                <div class="project-page-gallery-counter">
+                                    <span class="project-page-gallery-counter-current-slide">1</span>
+                                    <span class="project-page-gallery-counter-counter-separator">/</span>
+                                    <span class="project-page-gallery-counter-total-slides">1</span>
+                                </div>
+                                <div class="project-page-gallery-slides">
+
+                                    <div class="project-page-gallery-slide" data-date="10/04/2025" data-pixel-count="80K" data-note="The beginning."><img src="./resources/project_images/timelines/tpot_banner/tpot_banner1.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/05/2025" data-pixel-count="147K" data-note=""><img src="./resources/project_images/timelines/tpot_banner/tpot_banner2.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/06/2025" data-pixel-count="215K" data-note=""><img src="./resources/project_images/timelines/tpot_banner/tpot_banner3.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/07/2025" data-pixel-count="265K" data-note=""><img src="./resources/project_images/timelines/tpot_banner/tpot_banner4.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/08/2025" data-pixel-count="333K" data-note=""><img src="./resources/project_images/timelines/tpot_banner/tpot_banner5.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/09/2025" data-pixel-count="396K" data-note=""><img src="./resources/project_images/timelines/tpot_banner/tpot_banner6.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/10/2025" data-pixel-count="461K" data-note="Two is finished!"><img src="./resources/project_images/timelines/tpot_banner/tpot_banner7.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/11/2025" data-pixel-count="522K" data-note=""><img src="./resources/project_images/timelines/tpot_banner/tpot_banner8.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/12/2025" data-pixel-count="568K" data-note=""><img src="./resources/project_images/timelines/tpot_banner/tpot_banner9.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/13/2025" data-pixel-count="616K" data-note="The contestants are finished!"><img src="./resources/project_images/timelines/tpot_banner/tpot_banner10.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/14/2025" data-pixel-count="646K" data-note="TPOT Banner is finished!"><img src="./resources/project_images/timelines/tpot_banner/tpot_banner11.png" loading="lazy"></div>
+
+                                </div>
+                            </div>
+                            <div class="project-page-gallery-info-container">
+                                <div class="project-page-gallery-info-box" style="width: 30%;">
+                                    <div class="project-page-gallery-info-box-header">DATE</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-date">—</div>
+                                </div>
+                                <div class="project-page-gallery-info-box" style="width: 30%;">
+                                    <div class="project-page-gallery-info-box-header">PIXEL COUNT</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-pixel-count">—</div>
+
+                                </div>
+                                <div class="project-page-gallery-info-box" style="width: 100%;">
+                                    <div class="project-page-gallery-info-box-header">NOTE</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-note">—</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-page-extras-footer">
+                            <button class="button-normal project-page-gallery-prev">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="project-page-gallery-dots">
+                            </div>
+                            <button class="button-normal project-page-gallery-next">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-page-contributors-container">
+                        <div class="project-page-extras-header">
+                            <h3 style="margin: auto;">CONTRIBUTORS</h3>
+                        </div>
+                        <div class="project-page-contributors-scroll">
+                            <div class="project-page-contributor" style="display: none;">
+                                <span class="contributor-name"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page project-page" id="projects/bfdi-poster">
+                <div class="project-page-header">
+                    <button class="button-normal page-switching-button" data-target="projects">Go back</button>
+                    <h1>BFDI POSTER</h1>
+                    <span class="header-spacer" aria-hidden="true"></span>
+                </div>
+
+                <div class="project-page-description">
+                    The biggest (or the second biggest) drawing in the USA, featuring the original cast of contestants!
+                </div>
+
+                <div class="project-page-info-container">
+                    <div class="project-page-meta-container">
+                        <dl class="project-page-meta">
+                            <div class="project-page-meta-row">
+                                <dt>Idea by</dt>
+                                <dd>
+                                    MatheusPixel
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Template by</dt>
+                                <dd>
+                                    akaSandwich and Reviksedy
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Started on</dt>
+                                <dd>
+                                    10/16/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Finished on</dt>
+                                <dd>
+                                    12/29/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Pixel count</dt>
+                                <dd>
+                                    11.13M
+                                </dd>
+                            </div>
+                        </dl>
+                        <div class="project-page-meta-button-container">
+                            <button class="button-normal"
+                                onclick=" window.open('https://wplace.live/?lat=48.10913332584411&lng=-115.84959994072265','_blank')">Go
+                                to project</button>
+                            <button class="button-normal"
+                                onclick=" window.open('https://drive.google.com/file/d/1Hp6hJhV60LZdH4Oo1Ynf9hvSfyI0QepF/view','_blank')">Download
+                                template(s)</button>
+                        </div>
+                    </div>
+
+                    <div class="project-page-image-container">
+                        <img src="./resources/project_images/overview/bfdi_poster.png">
+                    </div>
+                </div>
+
+                <div class="project-page-extras-container">
+                    <div class="project-page-history-container">
+                        <div class="project-page-extras-header">
+                            <h3>HISTORY</h3>
+                            <span style="margin-left: auto;">
+                                Auto-scroll (<span class="project-page-gallery-auto-scroll-speed-display">OFF</span>)
+                            </span>
+                            <input type="range" min="0" max="3" step="0.001" value="0"
+                                class="project-page-gallery-auto-scroll-range">
+                        </div>
+
+                        <div class="project-page-gallery-container">
+                            <div class="project-page-gallery">
+                                <div class="project-page-gallery-counter">
+                                    <span class="project-page-gallery-counter-current-slide">1</span>
+                                    <span class="project-page-gallery-counter-counter-separator">/</span>
+                                    <span class="project-page-gallery-counter-total-slides">1</span>
+                                </div>
+                                <div class="project-page-gallery-slides">
+
+                                    <div class="project-page-gallery-slide" data-date="10/16/2025" data-pixel-count="119K" data-note="The beginning."><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster1.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/17/2025" data-pixel-count="182K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster2.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/18/2025" data-pixel-count="273K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster3.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/19/2025" data-pixel-count="363K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster4.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/20/2025" data-pixel-count="439K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster5.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/21/2025" data-pixel-count="541K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster6.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/22/2025" data-pixel-count="632K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster7.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/23/2025" data-pixel-count="728K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster8.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/24/2025" data-pixel-count="833K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster9.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/25/2025" data-pixel-count="947K" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster10.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/26/2025" data-pixel-count="1.05M" data-note="Needle is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster11.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/27/2025" data-pixel-count="1.17M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster12.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/28/2025" data-pixel-count="1.29M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster13.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/29/2025" data-pixel-count="1.41M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster14.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/30/2025" data-pixel-count="1.53M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster15.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="10/31/2025" data-pixel-count="1.65M" data-note="Teardrop is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster16.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/01/2025" data-pixel-count="1.82M" data-note="Announcer, Rocky, and Pin are finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster17.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/02/2025" data-pixel-count="1.96M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster18.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/03/2025" data-pixel-count="2.11M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster19.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/04/2025" data-pixel-count="2.28M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster20.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/05/2025" data-pixel-count="2.43M" data-note="Leafy and Pencil are finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster21.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/06/2025" data-pixel-count="2.56M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster22.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/07/2025" data-pixel-count="2.72M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster23.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/08/2025" data-pixel-count="2.88M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster24.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/09/2025" data-pixel-count="3.05M" data-note="Golf Ball is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster25.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/10/2025" data-pixel-count="3.23M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster26.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/11/2025" data-pixel-count="3.38M" data-note="Pen is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster27.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/12/2025" data-pixel-count="3.57M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster28.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/13/2025" data-pixel-count="3.75M" data-note="Match is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster29.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/14/2025" data-pixel-count="3.92M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster30.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/15/2025" data-pixel-count="4.12M" data-note="Coiny is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster31.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/16/2025" data-pixel-count="4.27M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster32.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/17/2025" data-pixel-count="4.43M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster33.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/18/2025" data-pixel-count="4.57M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster34.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/19/2025" data-pixel-count="4.75M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster35.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/20/2025" data-pixel-count="4.86M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster36.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/21/2025" data-pixel-count="5M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster37.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/22/2025" data-pixel-count="5.17M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster38.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/23/2025" data-pixel-count="5.32M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster39.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/24/2025" data-pixel-count="5.44M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster40.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/25/2025" data-pixel-count="5.62M" data-note="Firey is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster41.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/26/2025" data-pixel-count="5.77M" data-note="The logo is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster42.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/27/2025" data-pixel-count="5.98M" data-note="Eraser is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster43.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/28/2025" data-pixel-count="6.11M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster44.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/29/2025" data-pixel-count="6.27M" data-note="Tennis Ball is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster45.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="11/30/2025" data-pixel-count="6.42M" data-note="Flower is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster46.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/01/2025" data-pixel-count="6.6M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster47.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/02/2025" data-pixel-count="6.76M" data-note="Ice Cube is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster48.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/03/2025" data-pixel-count="6.89M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster49.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/04/2025" data-pixel-count="7.05M" data-note="Blocky is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster50.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/05/2025" data-pixel-count="7.21M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster51.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/06/2025" data-pixel-count="7.34M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster52.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/07/2025" data-pixel-count="7.51M" data-note="Woody is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster53.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/08/2025" data-pixel-count="7.66M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster54.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/09/2025" data-pixel-count="7.81M" data-note="Spongy and Snowball are finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster55.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/10/2025" data-pixel-count="8M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster56.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/11/2025" data-pixel-count="8.12M" data-note="Bubble is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster57.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/12/2025" data-pixel-count="8.27M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster58.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/13/2025" data-pixel-count="8.41M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster59.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/14/2025" data-pixel-count="8.55M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster60.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/15/2025" data-pixel-count="8.7M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster61.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/16/2025" data-pixel-count="8.84M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster62.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/17/2025" data-pixel-count="8.96M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster63.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/18/2025" data-pixel-count="9.1M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster64.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/19/2025" data-pixel-count="9.31M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster65.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/20/2025" data-pixel-count="9.49M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster66.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/21/2025" data-pixel-count="9.64M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster67.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/22/2025" data-pixel-count="9.84M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster68.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/23/2025" data-pixel-count="10.01M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster69.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/24/2025" data-pixel-count="10.2M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster70.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/25/2025" data-pixel-count="10.36M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster71.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/26/2025" data-pixel-count="10.54M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster72.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/27/2025" data-pixel-count="10.72M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster73.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/28/2025" data-pixel-count="10.92M" data-note=""><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster74.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/29/2025" data-pixel-count="11.13M" data-note="BFDI Poster is finished!"><img src="./resources/project_images/timelines/bfdi_poster/bfdi_poster75.png" loading="lazy"></div>
+
+                                </div>
+                            </div>
+                            <div class="project-page-gallery-info-container">
+                                <div class="project-page-gallery-info-box" style="width: 30%;">
+                                    <div class="project-page-gallery-info-box-header">DATE</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-date">—</div>
+                                </div>
+                                <div class="project-page-gallery-info-box" style="width: 30%;">
+                                    <div class="project-page-gallery-info-box-header">PIXEL COUNT</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-pixel-count">—</div>
+
+                                </div>
+                                <div class="project-page-gallery-info-box" style="width: 100%;">
+                                    <div class="project-page-gallery-info-box-header">NOTE</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-note">—</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-page-extras-footer">
+                            <button class="button-normal project-page-gallery-prev">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="project-page-gallery-dots">
+                            </div>
+                            <button class="button-normal project-page-gallery-next">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-page-contributors-container">
+                        <div class="project-page-extras-header">
+                            <h3 style="margin: auto;">CONTRIBUTORS</h3>
+                        </div>
+                        <div class="project-page-contributors-scroll">
+                            <div class="project-page-contributor" style="display: none;">
+                                <span class="contributor-name"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page project-page" id="projects/huge-lightbulb">
+                <div class="project-page-header">
+                    <button class="button-normal page-switching-button" data-target="projects">Go back</button>
+                    <h1>HUGE LIGHTBULB</h1>
+                    <span class="header-spacer" aria-hidden="true"></span>
+                </div>
+
+                <div class="project-page-description">
+                    The Alliance's first major Inanimate Insanity project, another glowing contestant!
+                </div>
+
+                <div class="project-page-info-container">
+                    <div class="project-page-meta-container">
+                        <dl class="project-page-meta">
+                            <div class="project-page-meta-row">
+                                <dt>Idea by</dt>
+                                <dd>
+                                    L0v33rx
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Template by</dt>
+                                <dd>
+                                    Zushy and Reviksedy
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Started on</dt>
+                                <dd>
+                                    12/29/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Finished on</dt>
+                                <dd>
+                                    01/22/2025
+                                </dd>
+                            </div>
+
+                            <div class="project-page-meta-row">
+                                <dt>Pixel count</dt>
+                                <dd>
+                                    3.4M
+                                </dd>
+                            </div>
+                        </dl>
+                        <div class="project-page-meta-button-container">
+                            <button class="button-normal"
+                                onclick=" window.open('https://wplace.live/?lat=48.46738561676207&lng=-115.23840853447264','_blank')">Go
+                                to project</button>
+                            <button class="button-normal"
+                                onclick=" window.open('https://drive.google.com/file/d/13bl-3_oqgBAIlstyztse176WBSEWoF9o/view','_blank')">Download
+                                template(s)</button>
+                        </div>
+                    </div>
+
+                    <div class="project-page-image-container">
+                        <img src="./resources/project_images/overview/huge_lightbulb.png">
+                    </div>
+                </div>
+
+                <div class="project-page-extras-container">
+                    <div class="project-page-history-container">
+                        <div class="project-page-extras-header">
+                            <h3>HISTORY</h3>
+                            <span style="margin-left: auto;">
+                                Auto-scroll (<span class="project-page-gallery-auto-scroll-speed-display">OFF</span>)
+                            </span>
+                            <input type="range" min="0" max="3" step="0.001" value="0"
+                                class="project-page-gallery-auto-scroll-range">
+                        </div>
+
+                        <div class="project-page-gallery-container">
+                            <div class="project-page-gallery">
+                                <div class="project-page-gallery-counter">
+                                    <span class="project-page-gallery-counter-current-slide">1</span>
+                                    <span class="project-page-gallery-counter-counter-separator">/</span>
+                                    <span class="project-page-gallery-counter-total-slides">1</span>
+                                </div>
+                                <div class="project-page-gallery-slides">
+
+                                    <div class="project-page-gallery-slide" data-date="12/29/2025" data-pixel-count="61K" data-note="The beginning."><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb1.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/30/2025" data-pixel-count="180K" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb2.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="12/31/2025" data-pixel-count="377K" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb3.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/01/2026" data-pixel-count="541K" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb4.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/02/2026" data-pixel-count="705K" data-note="The limbs are finished!"><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb5.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/03/2026" data-pixel-count="850K" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb6.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/04/2026" data-pixel-count="1.02M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb7.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/05/2026" data-pixel-count="1.17M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb8.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/06/2026" data-pixel-count="1.38M" data-note="The face is finished!"><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb9.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/07/2026" data-pixel-count="1.5M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb10.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/08/2026" data-pixel-count="1.64M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb11.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/09/2026" data-pixel-count="1.81M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb12.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/10/2026" data-pixel-count="1.98M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb13.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/11/2026" data-pixel-count="2.1M" data-note="Lightbulb's base is finished!"><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb14.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/12/2026" data-pixel-count="2.23M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb15.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/13/2026" data-pixel-count="2.36M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb16.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/14/2026" data-pixel-count="2.51M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb17.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/15/2026" data-pixel-count="2.63M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb18.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/16/2026" data-pixel-count="2.74M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb19.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/17/2026" data-pixel-count="2.83M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb20.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/18/2026" data-pixel-count="2.95M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb21.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/19/2026" data-pixel-count="3.04M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb22.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/20/2026" data-pixel-count="3.11M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb23.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/21/2026" data-pixel-count="3.26M" data-note=""><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb24.png" loading="lazy"></div>
+                                    <div class="project-page-gallery-slide" data-date="01/22/2026" data-pixel-count="3.4M" data-note="Huge Lightbulb is finished!"><img src="./resources/project_images/timelines/huge_lightbulb/huge_lightbulb25.png" loading="lazy"></div>
+                                </div>
+                            </div>
+                            <div class="project-page-gallery-info-container">
+                                <div class="project-page-gallery-info-box" style="width: 30%;">
+                                    <div class="project-page-gallery-info-box-header">DATE</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-date">—</div>
+                                </div>
+                                <div class="project-page-gallery-info-box" style="width: 30%;">
+                                    <div class="project-page-gallery-info-box-header">PIXEL COUNT</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-pixel-count">—</div>
+
+                                </div>
+                                <div class="project-page-gallery-info-box" style="width: 100%;">
+                                    <div class="project-page-gallery-info-box-header">NOTE</div>
+                                    <div class="project-page-gallery-info-box-content" id="info-note">—</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-page-extras-footer">
+                            <button class="button-normal project-page-gallery-prev">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="project-page-gallery-dots">
+                            </div>
+                            <button class="button-normal project-page-gallery-next">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-page-contributors-container">
+                        <div class="project-page-extras-header">
+                            <h3 style="margin: auto;">CONTRIBUTORS</h3>
+                        </div>
+                        <div class="project-page-contributors-scroll">
+                            <div class="project-page-contributor" style="display: none; justify-content: center; margin: auto 0;">
+                                <span class="contributor-name"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <div class="footer">
+            <p>Webpage by <strong><a href="https://github.com/Reviksedy">Reviksedy</a></strong></p>
 
-        <div class="project" data-project="tpot-banner">
-            <h1>TPOT BANNER</h1>
-            <p>Jacknjellify YouTube banner, recreated in Wplace!</p>
+            <div class="toggle-container" style="margin-left: auto;">
 
-            <div class="slider-controls-top">
-                <div class="autoscroll-controls">
-                    <button data-delay="off" class="active">Off</button>
-                    <button data-delay="0.01">0.01s</button>
-                    <button data-delay="0.03">0.03s</button>
-                    <button data-delay="0.05">0.05s</button>
-                    <button data-delay="0.1">0.1s</button>
-                    <button data-delay="0.5">0.5s</button>
-                    <button data-delay="1">1s</button>
-                    <button data-delay="5">5s</button>
-                    <button data-delay="10">10s</button>
-                </div>
-
-                <div class="direction-control">
-                    <button class="direction-toggle">→</button>
-                </div>
-            </div>
-            
-            <div class="slider">
-                <div class="slide-counter">
-                    <span class="current-slide">1</span>
-                    <span class="counter-separator">/</span>
-                    <span class="total-slides">1</span>
-                </div>
-
-                <div class="slide active" data-date="10/04/2025" data-pixelcount="80K" data-note="The beginning."><img src="./resources/tpot_banner/tpot_banner1.png" loading="lazy"></div>
-                <div class="slide" data-date="10/05/2025" data-pixelcount="147K" data-note=""><img src="./resources/tpot_banner/tpot_banner2.png" loading="lazy"></div>
-                <div class="slide" data-date="10/06/2025" data-pixelcount="215K" data-note=""><img src="./resources/tpot_banner/tpot_banner3.png" loading="lazy"></div>
-                <div class="slide" data-date="10/07/2025" data-pixelcount="265K" data-note=""><img src="./resources/tpot_banner/tpot_banner4.png" loading="lazy"></div>
-                <div class="slide" data-date="10/08/2025" data-pixelcount="333K" data-note=""><img src="./resources/tpot_banner/tpot_banner5.png" loading="lazy"></div>
-                <div class="slide" data-date="10/09/2025" data-pixelcount="396K" data-note=""><img src="./resources/tpot_banner/tpot_banner6.png" loading="lazy"></div>
-                <div class="slide" data-date="10/10/2025" data-pixelcount="461K" data-note="Two is finished!"><img src="./resources/tpot_banner/tpot_banner7.png" loading="lazy"></div>
-                <div class="slide" data-date="10/11/2025" data-pixelcount="522K" data-note=""><img src="./resources/tpot_banner/tpot_banner8.png" loading="lazy"></div>
-                <div class="slide" data-date="10/12/2025" data-pixelcount="568K" data-note=""><img src="./resources/tpot_banner/tpot_banner9.png" loading="lazy"></div>
-                <div class="slide" data-date="10/13/2025" data-pixelcount="616K" data-note="The contestants are finished!"><img src="./resources/tpot_banner/tpot_banner10.png" loading="lazy"></div>
-                <div class="slide" data-date="10/14/2025" data-pixelcount="646K" data-note="TPOT Banner is finished!"><img src="./resources/tpot_banner/tpot_banner11.png" loading="lazy"></div>
-            </div>
-
-            <div class="image-description-container">
-                <div class="description-box" style="width: 20%;">
-                    <div class="description-box-header">
-                        <p>DATE</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-date">DATE</p>
-                    </div>
-                </div>
-
-                <div class="description-box" style="width: 20%;">
-                    <div class="description-box-header">
-                        <p>PIXEL COUNT</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-pixel-count">PIXEL COUNT</p>
-                    </div>
-                </div>
-
-                <div class="description-box" style="width: 60%;">
-                    <div class="description-box-header">
-                        <p>NOTE</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-note">NOTE</p>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="dots" id="dots-cont">
-            </div>
-
-            <div class="slider-controls-bottom">
-                <button class="prev-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                    <span style="width: 100%;">Previous</span>
+                <span class="toggle-label">Disable Page Fade-In</span>
+                <button class="toggle" aria-pressed="false" data-target="page-fade-off">
+                    <span class="toggle-thumb"></span>
                 </button>
-        
-                <button class="next-button">
-                    <span style="width: 100%;">Next</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
+
+                <span class="toggle-label">Disable Fancy FX</span>
+                <button class="toggle" aria-pressed="false" data-target="fancy-fx-off">
+                    <span class="toggle-thumb"></span>
                 </button>
+
             </div>
-
-            <br>
-
-            <h2>CONTRIBUTORS</h2>
-
-            <div class="contributor-box"></div>
         </div>
 
-
-
-        <div class="project" data-project="bfdi-poster">
-            <h1>BFDI POSTER</h1>
-            <p>Let's make the new biggest drawing in the USA, featuring the original cast of contestants!</p>
-
-            <div class="slider-controls-top">
-                <div class="autoscroll-controls">
-                    <button data-delay="off" class="active">Off</button>
-                    <button data-delay="0.01">0.01s</button>
-                    <button data-delay="0.03">0.03s</button>
-                    <button data-delay="0.05">0.05s</button>
-                    <button data-delay="0.1">0.1s</button>
-                    <button data-delay="0.5">0.5s</button>
-                    <button data-delay="1">1s</button>
-                    <button data-delay="5">5s</button>
-                    <button data-delay="10">10s</button>
-                </div>
-
-                <div class="direction-control">
-                    <button class="direction-toggle">→</button>
-                </div>
-            </div>
-            
-            <div class="slider">
-                <div class="slide-counter">
-                    <span class="current-slide">1</span>
-                    <span class="counter-separator">/</span>
-                    <span class="total-slides">1</span>
-                </div>
-
-                <div class="slide active" data-date="10/16/2025" data-pixelcount="119K" data-note="The beginning."><img src="./resources/bfdi_poster/bfdi_poster1.png" loading="lazy"></div>
-                <div class="slide" data-date="10/17/2025" data-pixelcount="182K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster2.png" loading="lazy"></div>
-                <div class="slide" data-date="10/18/2025" data-pixelcount="273K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster3.png" loading="lazy"></div>
-                <div class="slide" data-date="10/19/2025" data-pixelcount="363K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster4.png" loading="lazy"></div>
-                <div class="slide" data-date="10/20/2025" data-pixelcount="439K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster5.png" loading="lazy"></div>
-                <div class="slide" data-date="10/21/2025" data-pixelcount="541K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster6.png" loading="lazy"></div>
-                <div class="slide" data-date="10/22/2025" data-pixelcount="632K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster7.png" loading="lazy"></div>
-                <div class="slide" data-date="10/23/2025" data-pixelcount="728K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster8.png" loading="lazy"></div>
-                <div class="slide" data-date="10/24/2025" data-pixelcount="833K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster9.png" loading="lazy"></div>
-                <div class="slide" data-date="10/25/2025" data-pixelcount="947K" data-note=""><img src="./resources/bfdi_poster/bfdi_poster10.png" loading="lazy"></div>
-                <div class="slide" data-date="10/26/2025" data-pixelcount="1.05M" data-note="Needle is finished!"><img src="./resources/bfdi_poster/bfdi_poster11.png" loading="lazy"></div>
-                <div class="slide" data-date="10/27/2025" data-pixelcount="1.17M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster12.png" loading="lazy"></div>
-                <div class="slide" data-date="10/28/2025" data-pixelcount="1.29M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster13.png" loading="lazy"></div>
-                <div class="slide" data-date="10/29/2025" data-pixelcount="1.41M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster14.png" loading="lazy"></div>
-                <div class="slide" data-date="10/30/2025" data-pixelcount="1.53M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster15.png" loading="lazy"></div>
-                <div class="slide" data-date="10/31/2025" data-pixelcount="1.65M" data-note="Teardrop is finished!"><img src="./resources/bfdi_poster/bfdi_poster16.png" loading="lazy"></div>
-                <div class="slide" data-date="11/01/2025" data-pixelcount="1.82M" data-note="Announcer, Rocky, and Pin are finished!"><img src="./resources/bfdi_poster/bfdi_poster17.png" loading="lazy"></div>
-                <div class="slide" data-date="11/02/2025" data-pixelcount="1.96M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster18.png" loading="lazy"></div>
-                <div class="slide" data-date="11/03/2025" data-pixelcount="2.11M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster19.png" loading="lazy"></div>
-                <div class="slide" data-date="11/04/2025" data-pixelcount="2.28M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster20.png" loading="lazy"></div>
-                <div class="slide" data-date="11/05/2025" data-pixelcount="2.43M" data-note="Leafy and Pencil are finished!"><img src="./resources/bfdi_poster/bfdi_poster21.png" loading="lazy"></div>
-                <div class="slide" data-date="11/06/2025" data-pixelcount="2.56M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster22.png" loading="lazy"></div>
-                <div class="slide" data-date="11/07/2025" data-pixelcount="2.72M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster23.png" loading="lazy"></div>
-                <div class="slide" data-date="11/08/2025" data-pixelcount="2.88M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster24.png" loading="lazy"></div>
-                <div class="slide" data-date="11/09/2025" data-pixelcount="3.05M" data-note="Golf Ball is finished!"><img src="./resources/bfdi_poster/bfdi_poster25.png" loading="lazy"></div>
-                <div class="slide" data-date="11/10/2025" data-pixelcount="3.23M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster26.png" loading="lazy"></div>
-                <div class="slide" data-date="11/11/2025" data-pixelcount="3.38M" data-note="Pen is finished!"><img src="./resources/bfdi_poster/bfdi_poster27.png" loading="lazy"></div>
-                <div class="slide" data-date="11/12/2025" data-pixelcount="3.57M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster28.png" loading="lazy"></div>
-                <div class="slide" data-date="11/13/2025" data-pixelcount="3.75M" data-note="Match is finished!"><img src="./resources/bfdi_poster/bfdi_poster29.png" loading="lazy"></div>
-                <div class="slide" data-date="11/14/2025" data-pixelcount="3.92M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster30.png" loading="lazy"></div>
-                <div class="slide" data-date="11/15/2025" data-pixelcount="4.12M" data-note="Coiny is finished!"><img src="./resources/bfdi_poster/bfdi_poster31.png" loading="lazy"></div>
-                <div class="slide" data-date="11/16/2025" data-pixelcount="4.27M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster32.png" loading="lazy"></div>
-                <div class="slide" data-date="11/17/2025" data-pixelcount="4.43M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster33.png" loading="lazy"></div>
-                <div class="slide" data-date="11/18/2025" data-pixelcount="4.57M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster34.png" loading="lazy"></div>
-                <div class="slide" data-date="11/19/2025" data-pixelcount="4.75M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster35.png" loading="lazy"></div>
-                <div class="slide" data-date="11/20/2025" data-pixelcount="4.86M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster36.png" loading="lazy"></div>
-                <div class="slide" data-date="11/21/2025" data-pixelcount="5M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster37.png" loading="lazy"></div>
-                <div class="slide" data-date="11/22/2025" data-pixelcount="5.17M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster38.png" loading="lazy"></div>
-                <div class="slide" data-date="11/23/2025" data-pixelcount="5.32M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster39.png" loading="lazy"></div>
-                <div class="slide" data-date="11/24/2025" data-pixelcount="5.44M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster40.png" loading="lazy"></div>
-                <div class="slide" data-date="11/25/2025" data-pixelcount="5.62M" data-note="Firey is finished!"><img src="./resources/bfdi_poster/bfdi_poster41.png" loading="lazy"></div>
-                <div class="slide" data-date="11/26/2025" data-pixelcount="5.77M" data-note="The logo is finished!"><img src="./resources/bfdi_poster/bfdi_poster42.png" loading="lazy"></div>
-                <div class="slide" data-date="11/27/2025" data-pixelcount="5.98M" data-note="Eraser is finished!"><img src="./resources/bfdi_poster/bfdi_poster43.png" loading="lazy"></div>
-                <div class="slide" data-date="11/28/2025" data-pixelcount="6.11M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster44.png" loading="lazy"></div>
-                <div class="slide" data-date="11/29/2025" data-pixelcount="6.27M" data-note="Tennis Ball is finished!"><img src="./resources/bfdi_poster/bfdi_poster45.png" loading="lazy"></div>
-                <div class="slide" data-date="11/30/2025" data-pixelcount="6.42M" data-note="Flower is finished!"><img src="./resources/bfdi_poster/bfdi_poster46.png" loading="lazy"></div>
-                <div class="slide" data-date="12/01/2025" data-pixelcount="6.6M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster47.png" loading="lazy"></div>
-                <div class="slide" data-date="12/02/2025" data-pixelcount="6.76M" data-note="Ice Cube is finished!"><img src="./resources/bfdi_poster/bfdi_poster48.png" loading="lazy"></div>
-                <div class="slide" data-date="12/03/2025" data-pixelcount="6.89M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster49.png" loading="lazy"></div>
-                <div class="slide" data-date="12/04/2025" data-pixelcount="7.05M" data-note="Blocky is finished!"><img src="./resources/bfdi_poster/bfdi_poster50.png" loading="lazy"></div>
-                <div class="slide" data-date="12/05/2025" data-pixelcount="7.21M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster51.png" loading="lazy"></div>
-                <div class="slide" data-date="12/06/2025" data-pixelcount="7.34M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster52.png" loading="lazy"></div>
-                <div class="slide" data-date="12/07/2025" data-pixelcount="7.51M" data-note="Woody is finished!"><img src="./resources/bfdi_poster/bfdi_poster53.png" loading="lazy"></div>
-                <div class="slide" data-date="12/08/2025" data-pixelcount="7.66M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster54.png" loading="lazy"></div>
-                <div class="slide" data-date="12/09/2025" data-pixelcount="7.81M" data-note="Spongy and Snowball are finished!"><img src="./resources/bfdi_poster/bfdi_poster55.png" loading="lazy"></div>
-                <div class="slide" data-date="12/10/2025" data-pixelcount="8M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster56.png" loading="lazy"></div>
-                <div class="slide" data-date="12/11/2025" data-pixelcount="8.12M" data-note="Bubble is finished!"><img src="./resources/bfdi_poster/bfdi_poster57.png" loading="lazy"></div>
-                <div class="slide" data-date="12/12/2025" data-pixelcount="8.27M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster58.png" loading="lazy"></div>
-                <div class="slide" data-date="12/13/2025" data-pixelcount="8.41M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster59.png" loading="lazy"></div>
-                <div class="slide" data-date="12/14/2025" data-pixelcount="8.55M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster60.png" loading="lazy"></div>
-                <div class="slide" data-date="12/15/2025" data-pixelcount="8.7M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster61.png" loading="lazy"></div>
-                <div class="slide" data-date="12/16/2025" data-pixelcount="8.84M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster62.png" loading="lazy"></div>
-                <div class="slide" data-date="12/17/2025" data-pixelcount="8.96M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster63.png" loading="lazy"></div>
-                <div class="slide" data-date="12/18/2025" data-pixelcount="9.1M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster64.png" loading="lazy"></div>
-                <div class="slide" data-date="12/19/2025" data-pixelcount="9.31M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster65.png" loading="lazy"></div>
-                <div class="slide" data-date="12/20/2025" data-pixelcount="9.49M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster66.png" loading="lazy"></div>
-                <div class="slide" data-date="12/21/2025" data-pixelcount="9.64M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster67.png" loading="lazy"></div>
-                <div class="slide" data-date="12/22/2025" data-pixelcount="9.84M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster68.png" loading="lazy"></div>
-                <div class="slide" data-date="12/23/2025" data-pixelcount="10.01M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster69.png" loading="lazy"></div>
-                <div class="slide" data-date="12/24/2025" data-pixelcount="10.2M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster70.png" loading="lazy"></div>
-                <div class="slide" data-date="12/25/2025" data-pixelcount="10.36M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster71.png" loading="lazy"></div>
-                <div class="slide" data-date="12/26/2025" data-pixelcount="10.54M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster72.png" loading="lazy"></div>
-                <div class="slide" data-date="12/27/2025" data-pixelcount="10.72M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster73.png" loading="lazy"></div>
-                <div class="slide" data-date="12/28/2025" data-pixelcount="10.92M" data-note=""><img src="./resources/bfdi_poster/bfdi_poster74.png" loading="lazy"></div>
-                <div class="slide" data-date="12/29/2025" data-pixelcount="11.13M" data-note="BFDI Poster is finished!"><img src="./resources/bfdi_poster/bfdi_poster75.png" loading="lazy"></div>
-            </div>
-
-            <div class="image-description-container">
-                <div class="description-box" style="width: 20%;">
-                    <div class="description-box-header">
-                        <p>DATE</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-date">DATE</p>
-                    </div>
-                </div>
-
-                <div class="description-box" style="width: 20%;">
-                    <div class="description-box-header">
-                        <p>PIXEL COUNT</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-pixel-count">PIXEL COUNT</p>
-                    </div>
-                </div>
-
-                <div class="description-box" style="width: 60%;">
-                    <div class="description-box-header">
-                        <p>NOTE</p>
-                    </div>
-                    <div class="description-box-content">
-                        <p id="current-note">NOTE</p>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="dots" id="dots-cont">
-            </div>
-
-            <div class="slider-controls-bottom">
-                <button class="prev-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                    <span style="width: 100%;">Previous</span>
-                </button>
-        
-                <button class="next-button">
-                    <span style="width: 100%;">Next</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        
+        <script src="./scripts/splash-text.js"></script>
+        <script src="./scripts/page-switching.js"></script>
+        <script src="./scripts/toggle-switch.js"></script>
+        <script src="./scripts/header-spacer.js"></script>
+        <script src="./scripts/gallery.js"></script>
+        <script src="./scripts/gallery-auto-scroll.js"></script>
+        <script src="./scripts/contributors.js"></script>
     </div>
-
-    <footer class="site-footer">
-        <p>Webpage by <strong><a href="https://github.com/Reviksedy">Reviksedy</a></strong></p>
-    </footer>
-
-    <script src="script.js" defer></script>
 </body>
-</html>
