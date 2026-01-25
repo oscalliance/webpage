@@ -233,7 +233,7 @@ const projectContributors = {
             "Speedy",
             "Sphis",
             "Stamp056",
-            "Staticfication",
+            "Staticfiction",
             "StormyClock",
             "StormyDustpan",
             "Strawberrypie3167",
