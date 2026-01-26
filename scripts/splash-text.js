@@ -41,7 +41,8 @@ const splashTexts = [
     "First we W, then we place. Lets Wplace!",
     "I wonder if there is A Person that uses :tismcreature: a lot...",
     "You know, that's huge, Firey!",
-    "What is this, some kind of Battle for Dream Island?"
+    "What is this, some kind of Battle for Dream Island?",
+    "TCH is the best user and we're gonna make him an admin (lying)"
 ];
 
 function setRandomSplash() {
