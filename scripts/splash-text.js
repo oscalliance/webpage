@@ -45,7 +45,72 @@ const splashTexts = [
     "TCH is the best user and we're gonna make him an admin (lying)"
 ];
 
+const birthdays = {
+    "01-12": ["One (InvisibleThe2nd)"],
+    "01-20": ["Cherry"],
+    "01-22": ["TonyDaBest"],
+    "01-23": ["zushyart", "Parfaitheart"],
+
+    "02-04": ["Marker The Green"],
+    "02-22": ["Reviksedy"],
+
+    "03-13": ["Crazl"],
+    "03-16": ["Gabo Metal"],
+    "03-23": ["Kaldot"],
+    "03-28": ["BorboStuff15"],
+
+    "04-05": ["akaSandwich"],
+    "04-23": ["Two (keviningot72_56444)"],
+    "04-26": ["Moonlight"],
+    "04-27": ["Frenkizaba1"],
+
+    "05-13": ["AnalyticalTomato"],
+    "05-18": ["Matheuspixel"],
+
+    "06-08": ["JackCraftPlays"],
+    "06-11": ["Painkiller lover"],
+    "06-19": ["A Person That Is Me"],
+    "06-27": ["Malina"],
+    "06-30": ["SeQuaLL"],
+
+    "07-26": ["PrimeNavigator"],
+
+    "08-02": ["Shelter"],
+    "08-13": ["Bookfan"],
+    "08-31": ["PizzaGuy"],
+
+    "09-02": ["BlueStevie"],
+    "09-24": ["Hexagonix"],
+
+    "10-09": ["Speedy", "keemkar"],
+    "10-14": ["Snail"],
+    "10-22": ["d7zzz_"],
+
+    "11-21": ["Nugget"],
+    "11-28": ["L0v33rx"],
+
+    "12-19": ["Jace"],
+    "12-20": ["Arksomos"],
+    "12-31": ["TCH"]
+};
+
+function getDate() {
+    const today = new Date();
+    return String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
+}
+
 function setRandomSplash() {
+
+    const today = getDate();
+
+    if (birthdays[today] && Math.random() < 0.25) {
+        const people = birthdays[today];
+        const person = people[Math.floor(Math.random() * people.length)];
+
+        splashTextElement.textContent = `Happy Birthday, ${person}!`;
+        return;
+    }
+
     const randomIndex = Math.floor(Math.random() * splashTexts.length);
     splashTextElement.textContent = splashTexts[randomIndex];
 }
