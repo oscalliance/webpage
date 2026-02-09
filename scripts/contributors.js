@@ -267,6 +267,10 @@ const projectContributors = {
     "projects/huge-lightbulb":
         [
             "N/A"
+        ],
+    "projects/bfdi-thumbnails":
+        [
+            "N/A"
         ]
 };
 

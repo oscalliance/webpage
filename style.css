@@ -257,6 +257,7 @@ body.page-fade-off .page.active {
     color: var(--text-highlighted);
     font-weight: 500;
     transition: transform 0.2s ease-out;
+    transform: translateY(1px);
 }
 
 
@@ -401,7 +402,7 @@ body.page-fade-off .page.active {
     overflow: hidden;
     text-overflow: ellipsis; 
 
-    filter: drop-shadow(0px 2px 4px hsla(0, 0%, 0%, 0.8));
+    filter: drop-shadow(0px 2px 4px hsla(0, 0%, 0%, 0.9));
     transition: all 0.15s;
 }
 
