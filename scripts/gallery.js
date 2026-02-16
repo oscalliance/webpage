@@ -1,3 +1,13 @@
+function formatDatesInText(text) {
+    const useMMDDYYYY = document.body.classList.contains("use-mmddyyyy");
+
+    return text.replace(/\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b/g, (_, m, d, y) => {
+        return useMMDDYYYY
+            ? `${m}/${d}/${y}`
+            : `${d}/${m}/${y}`;
+    });
+}
+
 function initGalleryContainer(container) {
     const gallery = container.querySelector('.project-page-gallery')
 
@@ -15,6 +25,8 @@ function initGalleryContainer(container) {
     const pixelsInfo = infoContainer.querySelector('#info-pixel-count');
     const noteInfo = infoContainer.querySelector('#info-note');
 
+    dateInfo.classList.add("has-date");
+
     let dotElements;
     
     let currentIndex = 0;
@@ -29,10 +41,12 @@ function initGalleryContainer(container) {
 
         counterCurrent.textContent = `${currentIndex + 1}`;
 
-        
-        dateInfo.textContent = slides[currentIndex].dataset.date  === "" ? '—' : slides[currentIndex].dataset.date;
-        pixelsInfo.textContent = slides[currentIndex].dataset.pixelCount  === "" ? '—' : '~' + slides[currentIndex].dataset.pixelCount;
-        noteInfo.textContent = slides[currentIndex].dataset.note  === "" ? '—' : slides[currentIndex].dataset.note;
+        const rawDate = slides[currentIndex].dataset.date || '—';
+        dateInfo.dataset.original = rawDate;
+
+        dateInfo.textContent = formatDatesInText(rawDate);
+        pixelsInfo.textContent = '~' + slides[currentIndex].dataset.pixelCount || '—';
+        noteInfo.textContent = slides[currentIndex].dataset.note || '—';
 
         if (dotElements) {
             dotElements.forEach(dot => dot.classList.remove('active'));

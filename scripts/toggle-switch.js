@@ -2,24 +2,38 @@ document.body.classList.add('animations-disabled'); /* preventing animations on 
 
 document.querySelectorAll('.toggle').forEach(toggle => {
     const key = toggle.dataset.target;
-    const savedState = localStorage.getItem(key);
+    const isPersistent = toggle.dataset.persistent !== "false";
 
-    if (savedState !== null) {
-        const isOn = savedState === 'true';
-        toggle.setAttribute('aria-pressed', isOn);
+    let isOn;
 
-        if (toggle.dataset.target) {
-            document.body.classList.toggle(toggle.dataset.target, isOn);
+    if (isPersistent) {
+        const savedState = localStorage.getItem(key);
+
+        if (savedState !== null) {
+            isOn = savedState === 'true';
+        } 
+        else {
+            isOn = toggle.getAttribute('aria-pressed') === 'true';
         }
+
+        toggle.setAttribute('aria-pressed', isOn);
+        document.body.classList.toggle(key, isOn);
+    } 
+    else {
+        isOn = toggle.getAttribute('aria-pressed') === 'true';
+        document.body.classList.toggle(key, isOn);
     }
 
     toggle.addEventListener('click', () => {
         const curState = toggle.getAttribute('aria-pressed') === 'true';
+        const newState = !curState;
 
-        toggle.setAttribute('aria-pressed', !curState);
-        document.body.classList.toggle(toggle.dataset.target, !curState);
+        toggle.setAttribute('aria-pressed', newState);
+        document.body.classList.toggle(key, newState);
 
-        localStorage.setItem(key, !curState);
+        if (isPersistent) {
+            localStorage.setItem(key, newState);
+        }
     });
 });
 

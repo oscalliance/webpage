@@ -13,8 +13,9 @@ document.querySelectorAll('.project-page-history-container').forEach(container =
         }
     }
 
-    function startAutoScroll(delay) {
-        stopAutoScroll();
+    function startAutoScroll(delay, forced) {
+        if (!document.body.classList.contains("hover-stops-gallery-auto-scroll") && !forced) return;
+        stopAutoScroll(true);
         if (delay <= 0) return;
 
         autoScrollTimer = setInterval(() => {
@@ -23,8 +24,8 @@ document.querySelectorAll('.project-page-history-container').forEach(container =
     }
 
 
-    function stopAutoScroll() {
-        if (autoScrollTimer) clearInterval(autoScrollTimer);
+    function stopAutoScroll(forced) {
+        if (autoScrollTimer && (forced || document.body.classList.contains("hover-stops-gallery-auto-scroll"))) clearInterval(autoScrollTimer);
     }
 
     slider.addEventListener('input', e => {
@@ -37,13 +38,13 @@ document.querySelectorAll('.project-page-history-container').forEach(container =
         }
 
         updateDisplay(value);
-        startAutoScroll(value);
+        startAutoScroll(value, true);
     });
 
     slider.value = 0; 
     updateDisplay(0);
-    startAutoScroll(0);
+    startAutoScroll(0, true);
 
-    gallery.addEventListener('mouseenter', stopAutoScroll);
-    gallery.addEventListener('mouseleave', () => startAutoScroll(parseFloat(slider.value)));
+    gallery.addEventListener('mouseenter', () => stopAutoScroll(false));
+    gallery.addEventListener('mouseleave', () => startAutoScroll(parseFloat(slider.value), false));
 });

@@ -29,7 +29,7 @@ const splashTexts = [
     "Matheus pixel tennis ball matrix man",
     "this message was written by revid",
     "Wplacey will NEVER have a mouth",
-    "RELEASE THE :eightball:",
+    "DEPLOY THE :eightball:",
     "dead chat",
     "WPLACE IS LOST MEDIA?",
     "Wplace has fallen, millions of BFDI fans must take over",
@@ -42,7 +42,7 @@ const splashTexts = [
     "I wonder if there is A Person that uses :tismcreature: a lot...",
     "You know, that's huge, Firey!",
     "What is this, some kind of Battle for Dream Island?",
-    "TCH is the best user and we're gonna make him an admin (lying)"
+    "TCH is a user"
 ];
 
 const birthdays = {
@@ -65,7 +65,7 @@ const birthdays = {
     "04-27": ["Frenkizaba1"],
 
     "05-13": ["AnalyticalTomato"],
-    "05-18": ["Matheuspixel"],
+    "05-18": ["MatheusPixel"],
 
     "06-08": ["JackCraftPlays"],
     "06-11": ["Painkiller lover"],
