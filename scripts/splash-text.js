@@ -42,7 +42,10 @@ const splashTexts = [
     "I wonder if there is A Person that uses :tismcreature: a lot...",
     "You know, that's huge, Firey!",
     "What is this, some kind of Battle for Dream Island?",
-    "TCH is a user"
+    "TCH is a user",
+    "See you get it!",
+    "Outbeaned",
+    "Hey Jerom! Or should I say, ihatebfdi_"
 ];
 
 const birthdays = {
