@@ -24,7 +24,7 @@ const splashTexts = [
     "Maybe the true OSC Alliance were the friends we made along the way",
     "In the top 50 of Wplace alliances!",
     "What does he even do?",
-    "Sand please come back its been 2763 years",
+    "Sand please come back its been 2763 years.. WAIT HES BACK??",
     "No botting, all manual",
     "Matheus pixel tennis ball matrix man",
     "this message was written by revid",
@@ -43,9 +43,11 @@ const splashTexts = [
     "You know, that's huge, Firey!",
     "What is this, some kind of Battle for Dream Island?",
     "TCH is a user",
-    "See you get it!",
+    "\"See you get it!\"",
     "Outbeaned",
-    "Hey Jerom! Or should I say, ihatebfdi_"
+    "Hey Jerom! Or should I say, ihatebfdi_",
+    "YEAH!",
+    "grrr thats not nice *bodyslams*"
 ];
 
 const birthdays = {
