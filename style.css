@@ -1067,3 +1067,12 @@ body.fun-mode .fun-container {
 .fun-column-right {
     background-image: url('./resources/fun_mode/fun_right.gif');
 }
+
+@keyframes hue-shift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.hue-shift-active {
+  animation: hue-shift 4s linear infinite; 
+}
