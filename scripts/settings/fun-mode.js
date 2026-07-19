@@ -28,7 +28,7 @@
 
     function checkBeat() {
         let currentBeat = Math.floor(audio.currentTime / secondsPerBeat);
-        if (currentBeat > lastBeat) {
+        if (currentBeat !== lastBeat) {
             lastBeat = currentBeat;
             setRandomSplash();
         }
