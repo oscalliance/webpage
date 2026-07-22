@@ -147,7 +147,13 @@ function setRandomSplash() {
     }
 
     const randomIndex = Math.floor(Math.random() * splashTexts.length);
-    splashTextElement.textContent = splashTexts[randomIndex];
+    if (splashTextElement.textContent == splashTexts[randomIndex]) {
+        setRandomSplash();
+    }
+    else {
+        splashTextElement.textContent = splashTexts[randomIndex];
+    }
+    
 }
 
 setRandomSplash();

@@ -4,7 +4,7 @@
     
     let beatChecker;
     let lastBeat = -1;
-    const bpm = 158.140;
+    const bpm = 158.180;
     const secondsPerBeat = 60 / bpm;
 
     document.querySelectorAll(toggleSelector).forEach(toggle => {
